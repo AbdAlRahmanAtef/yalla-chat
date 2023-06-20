@@ -1,5 +1,6 @@
 {
   "extends": [
+    "es.int:recommended",
     "next/babel",
     "next/core-web-vitals"
   ]
