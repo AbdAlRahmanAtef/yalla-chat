@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const [privateMemberMessages, setPrivateMemberMessages] = useState({});
   const [newMessages, setNewMessages] = useState({});
 
-  axios.defaults.baseURL = "http://localhost:5000";
+  axios.defaults.baseURL = `${process.env.NEXT_PUBLIC_BASE_URL}`;
 
   useEffect(() => setIsSSR(false));
 

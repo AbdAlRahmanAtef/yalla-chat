@@ -92,7 +92,7 @@ const Home = () => {
     if (!token) {
       router.push("/login");
     }
-  }, [token]);
+  }, []);
 
   useEffect(() => {
     const handler = (e: any) => {
@@ -115,6 +115,8 @@ const Home = () => {
   useEffect(() => {
     socket.on("receive_message", (data: any) => {
       setMessagesList(data);
+
+      console.log(process.env.NEXT_PUBLIC_BASE_URL);
 
       //@ts-ignore
       messagesRef.current?.scrollIntoView({
