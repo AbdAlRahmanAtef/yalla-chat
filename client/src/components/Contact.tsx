@@ -16,7 +16,7 @@ const Contact: React.FC<IProps> = ({ contact, handleClick }) => {
 
   return (
     <div
-      className={`flex items-center relative bg-[${bgColor}] gap-2 cursor-pointer px-4 py-1 rounded-md hover:bg-[#2a3942] transition-colors `}
+      className={`flex items-center justify-center md:justify-start relative bg-[${bgColor}] gap-2 cursor-pointer px-2 md:px-4 py-1 rounded-md hover:bg-[#2a3942] transition-colors `}
       onClick={() => {
         handleClick();
         dispatch(setContact(contact));

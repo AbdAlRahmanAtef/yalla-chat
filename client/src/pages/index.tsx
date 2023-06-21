@@ -27,7 +27,6 @@ const Home = () => {
     setMessage(message.content);
     setMode("update");
     setCurrentMessage(message);
-    console.log(message);
   };
 
   const handleEmojiSelect = (emoji: any) => {
@@ -116,8 +115,6 @@ const Home = () => {
     socket.on("receive_message", (data: any) => {
       setMessagesList(data);
 
-      console.log(process.env.NEXT_PUBLIC_BASE_URL);
-
       //@ts-ignore
       messagesRef.current?.scrollIntoView({
         behavior: "smooth",
@@ -131,7 +128,7 @@ const Home = () => {
   return (
     <div className="flex">
       <Sidebar setMessagesList={setMessagesList} />
-      <div className="w-full relative flex flex-col justify-between h-screen bg-[#001d3d] bg-[url('../assets/loading.png')]">
+      <div className="w-full relative flex flex-col justify-between h-screen bg-[url('../assets/loading.png')] bg-[#001d3d] ">
         {currentContact._id && <Navbar contact={currentContact} />}
         <div className="p-4 h-[85%]  overflow-y-auto">
           <div className="flex flex-col gap-1">
@@ -148,7 +145,7 @@ const Home = () => {
                   {idx === messagesList?.length - 1 && messagesRef && (
                     <>
                       <div className="h-[50px]" />
-                      <div className="" ref={messagesRef} />
+                      <div ref={messagesRef} />
                     </>
                   )}
                 </>
