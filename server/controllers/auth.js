@@ -16,6 +16,7 @@ export const signup = async (req, res) => {
   try {
     const { name, email, password, avatar } = req.body;
     const isUserFound = await User.findOne({ email });
+    console.log(isUserFound);
     if (isUserFound) return res.json({ message: "User already exists" });
 
     const result =
