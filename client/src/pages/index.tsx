@@ -92,7 +92,7 @@ const Home = () => {
     if (!token) {
       router.push("/login");
     }
-  }, []);
+  }, [user, token]);
 
   useEffect(() => {
     const handler = (e: any) => {
